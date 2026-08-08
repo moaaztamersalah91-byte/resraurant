@@ -1,25 +1,27 @@
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://moaaztamersalah91-byte.github.io/resruarant/</loc>
+        <loc>https://moaaztamersalah91-byte.github.io/resraurant/</loc>
     </url>
 
     <url>
-        <loc>https://moaaztamersalah91-byte.github.io/resruarant/Menu.html</loc>
+        <loc>https://moaaztamersalah91-byte.github.io/resraurant/Menu.html</loc>
     </url>
 
     <url>
-        <loc>https://moaaztamersalah91-byte.github.io/resruarant/Chefs.html</loc>
+        <loc>https://moaaztamersalah91-byte.github.io/resraurant/Chefs.html</loc>
     </url>
 
     <url>
-        <loc>https://moaaztamersalah91-byte.github.io/resruarant/Gallery%201.html</loc>
+        <loc>https://moaaztamersalah91-byte.github.io/resraurant/Gallery%201.html</loc>
     </url>
 
     <url>
-        <loc>https://moaaztamersalah91-byte.github.io/resruarant/Contact%201.html</loc>
+        <loc>https://moaaztamersalah91-byte.github.io/resraurant/Contact%201.html</loc>
     </url>
 
 </urlset>
+```
