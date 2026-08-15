@@ -1,54 +1,265 @@
-var img = [ "Images/My Project 1.webp" , "Images/My Project 2.webp" , "Images/My Project 3.webp" , "Images/My Project 4.webp" , "Images/My Project 5.webp" , "Images/My Project 6.webp" ];
-var p = [ "Where Great Food Meets a Warm Welcome." , "Crafted with Passion by Our Expert Chefs." , "Juicy Burgers, Unforgettable Flavor." , "Freshly Baked, Perfectly Delicious." , "Golden Crispy Chicken, Full of Flavor.", "Sweet Moments to End Every Meal." ];
-var count = [ "1 / 6" , "2 / 6" ,"3 / 6" , "4 / 6" , "5 / 6" , "6 / 6"]
+var img = [
+    "Images/My Project 1.webp",
+    "Images/My Project 2.webp",
+    "Images/My Project 3.webp",
+    "Images/My Project 4.webp",
+    "Images/My Project 5.webp",
+    "Images/My Project 6.webp"
+];
+
+
+// =========================
+// SLIDER TEXT - ENGLISH
+// =========================
+
+var p_en = [
+    "Where Great Food Meets a Warm Welcome.",
+    "Crafted with Passion by Our Expert Chefs.",
+    "Juicy Burgers, Unforgettable Flavor.",
+    "Freshly Baked, Perfectly Delicious.",
+    "Golden Crispy Chicken, Full of Flavor.",
+    "Sweet Moments to End Every Meal."
+];
+
+
+// =========================
+// SLIDER TEXT - ARABIC
+// =========================
+
+var p_ar = [
+    "حيث يلتقي الطعام الرائع بالترحيب الدافئ.",
+    "أطباق مصنوعة بشغف على يد طهاتنا المحترفين.",
+    "برجر شهي، ونكهة لا تُنسى.",
+    "مخبوزات طازجة ولذيذة بشكل مثالي.",
+    "دجاج مقرمش ذهبي، مليء بالنكهة.",
+    "لحظات حلوة لنختتم بها كل وجبة."
+];
+
+
+var count = [
+    "1 / 6",
+    "2 / 6",
+    "3 / 6",
+    "4 / 6",
+    "5 / 6",
+    "6 / 6"
+];
+
 var x = 0;
-function next_img ()
-{
+
+
+// =========================
+// NEXT IMAGE
+// =========================
+
+function next_img() {
+
     x++;
-    if ( x == img.length )
-    {
+
+    if (x == img.length) {
         x = 0;
     }
-    document.getElementById("img_1").src = img[ x ];
-    if ( x == count.length )
-    {
-        x = 0;
+
+    document.getElementById("img_1").src = img[x];
+
+    document.getElementById("h1_1").innerHTML = count[x];
+
+
+    if (currentLanguage === "ar") {
+
+        document.getElementById("h2_1").innerHTML = p_ar[x];
+
     }
-    document.getElementById("h1_1").innerHTML = count[ x ];
-    if ( x == p.length )
-    {
-        x = 0;
+
+    else {
+
+        document.getElementById("h2_1").innerHTML = p_en[x];
+
     }
-    document.getElementById("h2_1").innerHTML = p[ x ];
+
 }
-function prev_img ()
-{
+
+
+// =========================
+// PREVIOUS IMAGE
+// =========================
+
+function prev_img() {
+
     x--;
-    if ( x < 0 )
-    {
-        x = img.length-1;
+
+    if (x < 0) {
+        x = img.length - 1;
     }
-    document.getElementById("img_1").src = img[ x ];
-    if ( x < 0 )
-    {
-        x = count.length-1;
+
+    document.getElementById("img_1").src = img[x];
+
+    document.getElementById("h1_1").innerHTML = count[x];
+
+
+    if (currentLanguage === "ar") {
+
+        document.getElementById("h2_1").innerHTML = p_ar[x];
+
     }
-    document.getElementById("h1_1").innerHTML = count[ x ];
-    if ( x < 0 )
-    {
-        x = p.length-1;
+
+    else {
+
+        document.getElementById("h2_1").innerHTML = p_en[x];
+
     }
-    document.getElementById("h2_1").innerHTML = p[ x ];
+
 }
-function send_message ()
-{
+
+
+// =========================
+// SEND MESSAGE
+// =========================
+
+function send_message() {
+
     var message = document.getElementById("text_message").value;
-    if ( message == "" )
-    {
-        window.alert("Please Write a Message!");
+
+    if (message == "") {
+
+        if (document.documentElement.lang === "ar") {
+
+            window.alert("من فضلك اكتب رسالة!");
+
+        } else {
+
+            window.alert("Please Write a Message!");
+
+        }
+
+    } else {
+
+        if (document.documentElement.lang === "ar") {
+
+            window.alert("تم إرسال رسالتك بنجاح!");
+
+        } else {
+
+            window.alert("Your message has been sent successfully!");
+
+        }
+
     }
-    else
-    {
-        window.alert("Your message has been sent successfully!");
-    }
+
 }
+
+
+var languageBtn = document.getElementById("languageBtn");
+
+var currentLanguage = localStorage.getItem("language") || "en";
+
+
+function changeLanguage() {
+
+    var elements = document.querySelectorAll("[data-en][data-ar]");
+
+    elements.forEach(function (element) {
+
+        if (currentLanguage === "ar") {
+
+            element.innerHTML = element.getAttribute("data-ar");
+
+        } else {
+
+            element.innerHTML = element.getAttribute("data-en");
+
+        }
+
+    });
+
+
+    // تغيير الـ Placeholder
+    var inputs = document.querySelectorAll(
+        "[data-en-placeholder][data-ar-placeholder]"
+    );
+
+    inputs.forEach(function (input) {
+
+        if (currentLanguage === "ar") {
+
+            input.placeholder =
+                input.getAttribute("data-ar-placeholder");
+
+        } else {
+
+            input.placeholder =
+                input.getAttribute("data-en-placeholder");
+
+        }
+
+    });
+
+
+    if (currentLanguage === "ar") {
+
+        document.documentElement.lang = "ar";
+
+        document.documentElement.dir = "rtl";
+
+        languageBtn.innerHTML = "English";
+
+    } else {
+
+        document.documentElement.lang = "en";
+
+        document.documentElement.dir = "ltr";
+
+        languageBtn.innerHTML = "العربية";
+
+    }
+
+
+    var sliderText = document.getElementById("h2_1");
+
+    if (sliderText) {
+
+        if (currentLanguage === "ar") {
+
+            sliderText.innerHTML = p_ar[x];
+
+        } else {
+
+            sliderText.innerHTML = p_en[x];
+
+        }
+
+    }
+
+}
+
+
+// =========================
+// LANGUAGE BUTTON
+// =========================
+
+languageBtn.addEventListener("click", function () {
+
+    if (currentLanguage === "en") {
+
+        currentLanguage = "ar";
+
+        localStorage.setItem("language", "ar");
+
+    } else {
+
+        currentLanguage = "en";
+
+        localStorage.setItem("language", "en");
+
+    }
+
+    changeLanguage();
+
+});
+
+
+// =========================
+// LOAD SAVED LANGUAGE
+// =========================
+
+changeLanguage();

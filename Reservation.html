@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book a Table</title>
+
+    <link rel="stylesheet" href="My Project.css">
+
+    <script src="My Project.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img id="img_header" src="Images/My Project ( Logo ).webp">
+
+        <h1
+            id="title"
+            data-en="Welcome To Restaurant Website"
+            data-ar="مرحبًا بكم في موقع المطعم"
+        >
+            Welcome To Restaurant Website
+        </h1>
+
+    </header>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <button id="languageBtn">العربية</button>
+            </li>
+
+            <li>
+                <a
+                    id="home"
+                    href="index.html"
+                    data-en="Home"
+                    data-ar="الرئيسية"
+                >
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="Menu.html"
+                    data-en="Menu"
+                    data-ar="القائمة"
+                >
+                    Menu
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="Chefs.html"
+                    data-en="Chefs"
+                    data-ar="الشيفات"
+                >
+                    Chefs
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="Gallery 1.html"
+                    data-en="Gallery"
+                    data-ar="معرض الصور"
+                >
+                    Gallery
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="Contact 1.html"
+                    data-en="Contact"
+                    data-ar="تواصل معنا"
+                >
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="Reservation.html"
+                    data-en="Book a Table"
+                    data-ar="احجز طاولة"
+                >
+                    Book a Table
+                </a>
+            </li>
+
+            <li>
+
+                <a
+                    href="#"
+                    data-en="Recipes"
+                    data-ar="الوصفات"
+                >
+                    Recipes
+                </a>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="Crispy Chicken.html"
+                            data-en="Crispy Chicken"
+                            data-ar="الدجاج المقرمش"
+                        >
+                            Crispy Chicken
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Pizza.html"
+                            data-en="Pizza"
+                            data-ar="البيتزا"
+                        >
+                            Pizza
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Beef Burger.html"
+                            data-en="Burger"
+                            data-ar="برجر"
+                        >
+                            Burger
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Grilled Steak.html"
+                            data-en="Grilled Steak"
+                            data-ar="ستيك مشوي"
+                        >
+                            Grilled Steak
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Spaghetti Bolognese.html"
+                            data-en="Spaghetti Bolognese"
+                            data-ar="سباجيتي بولونيز"
+                        >
+                            Spaghetti Bolognese
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Grilled Salmon.html"
+                            data-en="Grilled Salmon"
+                            data-ar="سلمون مشوي"
+                        >
+                            Grilled Salmon
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Chocolate Brownie.html"
+                            data-en="Chocolate Brownie"
+                            data-ar="براوني الشوكولاتة"
+                        >
+                            Chocolate Brownie
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="Lava Cake.html"
+                            data-en="Lava Cake"
+                            data-ar="كيكة لافا"
+                        >
+                            Lava Cake
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <div class="reservation">
+
+    <h1
+        data-en="Book a Table"
+        data-ar="احجز طاولة"
+    >
+        Book a Table
+    </h1>
+
+
+    <p
+        data-en="Reserve your table and enjoy a wonderful dining experience."
+        data-ar="احجز طاولتك واستمتع بتجربة طعام رائعة."
+    >
+        Reserve your table and enjoy a wonderful dining experience.
+    </p>
+
+
+    <form action="https://formsubmit.co/moaaztamersalah91@gmail.com" method="POST">
+
+        <input
+            type="hidden"
+            name="_subject"
+            value="New Table Reservation"
+        >
+
+        <input
+            type="hidden"
+            name="_template"
+            value="table"
+        >
+
+        <input
+            type="hidden"
+            name="_next"
+            value="https://moaaztamersalah91-byte.github.io/restaurant-2/Thank%20You.html"
+        >
+
+
+        <label
+            data-en="Your Name"
+            data-ar="اسمك"
+        >
+            Your Name
+        </label>
+
+        <input
+            type="text"
+            name="name"
+            data-en-placeholder="Enter your name"
+            data-ar-placeholder="أدخل اسمك"
+            placeholder="Enter your name"
+            required
+        >
+
+
+        <label
+            data-en="Phone Number"
+            data-ar="رقم الهاتف"
+        >
+            Phone Number
+        </label>
+
+        <input
+            type="tel"
+            name="phone"
+            data-en-placeholder="Enter your phone number"
+            data-ar-placeholder="أدخل رقم هاتفك"
+            placeholder="Enter your phone number"
+            required
+        >
+
+
+        <label
+            data-en="Number of Guests"
+            data-ar="عدد الضيوف"
+        >
+            Number of Guests
+        </label>
+
+        <input
+            type="number"
+            name="guests"
+            min="1"
+            data-en-placeholder="Number of guests"
+            data-ar-placeholder="عدد الضيوف"
+            placeholder="Number of guests"
+            required
+        >
+
+
+        <label
+            data-en="Date"
+            data-ar="التاريخ"
+        >
+            Date
+        </label>
+
+        <input
+            type="date"
+            name="date"
+            required
+        >
+
+
+        <label
+            data-en="Time"
+            data-ar="الوقت"
+        >
+            Time
+        </label>
+
+        <input
+            type="time"
+            name="time"
+            required
+        >
+
+
+        <button
+            type="submit"
+            data-en="Book Now"
+            data-ar="احجز الآن"
+        >
+            Book Now
+        </button>
+
+    </form>
+
+</div>
+
+    <footer>
+
+        <h1
+            data-en="Fresh Ingredients, Great Taste."
+            data-ar="مكونات طازجة، مذاق رائع."
+        >
+            "Fresh Ingredients, Great Taste."
+        </h1>
+
+    </footer>
+
+</body>
+
+</html>
